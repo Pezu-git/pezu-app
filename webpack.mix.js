@@ -18,6 +18,7 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
 ]);
 mix.styles([
     'resources/css/sport.css',
+    'resources/css/profile.css',
 ], 'public/css/app_moonbase.css');
 // mix.styles([
 //     'resources/css/anime.css',

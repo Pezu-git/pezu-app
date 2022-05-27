@@ -1,24 +1,46 @@
 body, main {
     background-color: #f7f7fa;
+    position: relative;
 }
-.header_container {
+header {
+    
     display: flex;
     align-items: center;
-    width: 30vw;
+    width: 100vw;
     margin: auto;
-    justify-content: space-around;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    background-color: #fff;
+    border-bottom: #f7f7fa;
+    -webkit-box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
+    box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
+}
+.header_container {
+   width: 35vw;
+   min-width: 500px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.sport_container {
+    width: 80vw;
+    margin: auto;
+    padding-top: 100px;
+    display: flex;  
 }
 a {
     text-decoration: none;
     color: black;
 }
-main {
-    width: 65vw;
-    margin: auto;
-    padding-top: 8vh;
-    display: flex;
-}
 
+.cards_container, 
+.competition_container {
+    height: 800px;
+    position: sticky;
+    top: 0;
+}
 .user_card, 
 .process_card {
     position: relative;
@@ -34,6 +56,10 @@ main {
     box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
     border-radius: 4px;
 }
+.user_card-user-name {
+    font-size: 20px;
+    font-weight: bold;
+}
 .user-image {
     position: absolute;
     top: 0;
@@ -46,6 +72,10 @@ main {
 }
 .user_card-info-item {
     font-weight: bold;
+}
+.user_card-info-lastTraining,
+.training_log-container {
+    margin-left: 7px;
 }
 .table {
     font-size: 15px;
@@ -89,9 +119,9 @@ hr {
     width: 100%;
     padding-left: 3%;
 }
-.training_log-link:hover {
+/* .training_log-link:hover {
     color: black;
-}
+} */
 .training_log-link-arrow {
     margin-left: 27%;
 }
@@ -126,11 +156,31 @@ hr {
     padding-top: 15px;
     font-size: 12px;
 }
+.week_process-data {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+.vert_line {
+    height: 25px;
+    border-left: 1px solid rgb(214, 211, 211);
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 105px;
+}
 .week_process-value,
 .year_process-value  {
     font-size: 30px;
     font-weight: bold;
     color: #79d7bd;
+}
+.week_process-timing {
+    padding-right: 15px;
+    font-size: 25px;
 }
 .training_list-container {
     position: relative;
@@ -138,19 +188,14 @@ hr {
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* padding-top: 50px; */
-    margin-left: 50px;
-
-    /* background-color: #fff; */
-    
+    margin-left: 50px;  
 }
 .training_list-item {
     width: 100%;
     background-color: #fff;
     padding-top: 25px;
     padding-bottom: 40px;
+    margin-bottom: 15px;
 
     -webkit-box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
     box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
@@ -181,4 +226,210 @@ hr {
     height: 400px;
     border: 1px solid gray;
     margin: auto;
+}
+
+.competition_container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 50px; 
+    background-color: #fff;
+    
+
+    -webkit-box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
+    box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
+    border-radius: 4px;
+}
+.competition_header-text {
+    padding-top: 25px;
+}
+.competition_past, 
+.competition_future {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(214, 211, 211);
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.competition_past-items-viewAll {
+    text-align: end;
+    font-size: 12px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    color: #007FB6;
+}
+.competition_past-items,
+.competition_future-items {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+.competition_future-items {
+    flex-direction: column;
+}
+.competition_past-item-image,
+.competition_future-item-image {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+}
+.competition_future-item:first-child {
+    margin-top: 10px;
+    
+}
+.competition_future-item {
+    margin-bottom: 20px;
+    display: flex;
+}
+.competition_future-item-description {
+    margin-left: 20px;
+}
+.competition_future-item-name {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.competition_future-item-date {
+    font-size: 10px;
+    text-align: start;
+    margin-bottom: 7px;
+}
+.competition_future-item-distance {
+    text-align: start;
+    margin-bottom: 0;
+}
+
+.competition_past-item {
+    width: 70px;
+}
+.competition_past-item-name {
+    font-size: 12px;
+    color: #007FB6;
+    display: block;
+    margin-top: 5px;
+    line-height: 1.1em;
+    word-wrap: break-word;
+}
+.competition_past-item-date {
+    font-size: 10px;
+    margin: 0;
+}
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.newtraining_btn {
+    width: 35%;
+    margin-left: 8px;
+}
+.form-select {
+    width: 35%;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.profile_container {
+    padding-top: 49px;
+    background-color: white;
+    width: 100%;
+    height: 800px;
+}
+.profile_user-images {
+    display: flex;
+    justify-content: center;
+    width: 100%;  
+}
+.profile_user-image {
+    width: 20%;
+    aspect-ratio: 1/1;
+    border: 2px solid white;
+}
+.profile_user-image:nth-child(-n+3) {
+    border-right: none;
+}
+.profile_user-card {
+    position: relative;
+    width: 11vw;
+    /* height: ; */
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    
+}
+.profile_user-avatar-container {
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.profile_user-avatar {
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 8vw;
+    height: 8vw;
+    max-width: 140px;
+    max-height: 140px;
+}
+.profile_card-user-name {
+    position: absolute;
+    width: 250px;
+    font-size: 1.3vw;
+    text-align: start;
+}
+.profile_month-progress {
+    margin-left: 35vw;
+    padding-top: 4vw;
+    /* width: 15vw; */
+    text-align: center;
+    display: flex;
+}
+.last_progress-title,
+.last_progress-count,
+.last_progress-foottitle {
+    margin: 0;
+    line-height: 1.3em;
+    font-size: 0.8vw;
+}
+.last_progress-count {
+    font-size: 3.6vw;
+    font-weight: bold;
+    
+}
+.last_progress-foottitle {
+    color: #6d6d78;
+}
+.profile_month-progress-calendar {
+    margin-left: 7vw;
+}
+.weekday {
+    font-weight: 600;
+}
+.day-wraper {
+    cursor: pointer;
+    position: relative;
+}
+.day {
+    opacity: 0;
+}
+.activity-indicator {
+    background: #a1a1aa;
+    opacity: 1;
+    width: 2px;
+    height: 2px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+}
+.week_activity-duration {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(184, 26, 60);
 }

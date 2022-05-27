@@ -28,7 +28,7 @@
                     Тренировка
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Лента активности</a></li>
+                    <li><a class="dropdown-item" href="/">Лента активности</a></li>
                     <li><a class="dropdown-item" href="#">Другое действие</a></li>
                     <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
                     <li><hr class="dropdown-divider"></li>
@@ -41,23 +41,25 @@
                     <img src="{{ asset('/assets/img/IMG_20171020_170022.jpg')}}" width="35" height="35" class="rounded-circle" alt="user image">
                 </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Мой профиль</a></li>
+                    <li><a class="dropdown-item" href="/profile">Мой профиль</a></li>
                     <li><a class="dropdown-item" href="#">Настройки</a></li>
                     <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="#">Отделенная ссылка</a></li>
                   </ul>
             </div>
-            <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle text-danger" viewBox="0 0 16 16" >
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                </svg>
-            </a>
-            
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle text-danger" viewBox="0 0 16 16" >
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+              </button>   
         </div>
     </header>
+    
     <main>
+        <div class="sport_container">
+             {{--!Левая колонка с Общей информацией--}}
         <div class="cards_container">
             <div class="user_card">
                 <div class="user-image">
@@ -66,7 +68,7 @@
                     </a>
                 </div>
                 
-                <h3>Artem Nikolaev</h3>
+                <a href="/profile" class="user_card-user-name">Артём Николаев</a>
                     <div class="user_card-info">
                         <table class="table table-borderless text-center">
                             <thead>
@@ -85,7 +87,7 @@
                             </tbody>
                           </table>
                           <hr>
-                          <table class="table table-borderless text-start">
+                          <table class="table table-borderless text-start user_card-info-lastTraining">
                             <thead>
                                 <tr>
                                   <td scope="col" colspan="3">Последняя тренировка</td>
@@ -127,7 +129,12 @@
                 </div>
                 <div class="week_process">
                     <p class="week_process-header">НА ЭТОЙ НЕДЕЛЕ</p>
-                    <p class="week_process-value">0 км</p>
+                    <div class="week_process-data">
+                        <p class="week_process-value">8,56 км</p>
+                        <div class="vert_line"></div>
+                        <p class="week_process-timing">00:48:56</p>
+                    </div>
+                    
                 </div>
                 <table class="table table-borderless text-start">
                     <thead>
@@ -155,6 +162,7 @@
                 </div>
             </div>
         </div>
+        {{--!Центральная колонка с Тренировками--}}
         <div class="training_list-container">
             <div class="training_list-item">
                 <div class="training_list-item-header">
@@ -184,12 +192,249 @@
                           </table>
                     </div>      
                 </div>
-                <div class="training_image">
-                    
+                <div class="training_image"> 
+                    <img src="{{ asset('/assets/img/run_default2.jpg')}}" class="rounded img" alt="user-image">
+                </div>   
+            </div> 
+            <div class="training_list-item">
+                <div class="training_list-item-header">
+                    <p class="training_date">22 мая 2022 г. в 15:04 Шатура, РФ</p>
+                    <div class="training_info-header">
+                        <div class="training_icon">
+                            <img src="{{ asset('/assets/img/shoes.png')}}" width="30" height="30" class="rounded" alt="user-image">
+                        </div> 
+                        <h3>Забег</h3>
+                    </div>
+                    <div class="training_table">
+                        <table class="table table-borderless text-start">
+                            <thead>
+                                <tr class="training_table-item-thead">
+                                  <td scope="col">Расстояние</td>
+                                  <td scope="col">Темп</td>
+                                  <td scope="col">Время</td>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr class="training_table-item-tbody">
+                                    <td>9,94 км</td>
+                                    <td>6:33 /км</td>
+                                    <td>1ч. 5мин</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>      
+                </div>
+                <div class="training_image"> 
+                    <img src="{{ asset('/assets/img/run_default2.jpg')}}" class="rounded img" alt="user-image">
+                </div>   
+            </div> 
+            <div class="training_list-item">
+                <div class="training_list-item-header">
+                    <p class="training_date">22 мая 2022 г. в 15:04 Шатура, РФ</p>
+                    <div class="training_info-header">
+                        <div class="training_icon">
+                            <img src="{{ asset('/assets/img/shoes.png')}}" width="30" height="30" class="rounded" alt="user-image">
+                        </div> 
+                        <h3>Забег</h3>
+                    </div>
+                    <div class="training_table">
+                        <table class="table table-borderless text-start">
+                            <thead>
+                                <tr class="training_table-item-thead">
+                                  <td scope="col">Расстояние</td>
+                                  <td scope="col">Темп</td>
+                                  <td scope="col">Время</td>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr class="training_table-item-tbody">
+                                    <td>9,94 км</td>
+                                    <td>6:33 /км</td>
+                                    <td>1ч. 5мин</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>      
+                </div>
+                <div class="training_image"> 
+                    <img src="{{ asset('/assets/img/run_default2.jpg')}}" class="rounded img" alt="user-image">
+                </div>   
+            </div> 
+            <div class="training_list-item">
+                <div class="training_list-item-header">
+                    <p class="training_date">22 мая 2022 г. в 15:04 Шатура, РФ</p>
+                    <div class="training_info-header">
+                        <div class="training_icon">
+                            <img src="{{ asset('/assets/img/shoes.png')}}" width="30" height="30" class="rounded" alt="user-image">
+                        </div> 
+                        <h3>Забег</h3>
+                    </div>
+                    <div class="training_table">
+                        <table class="table table-borderless text-start">
+                            <thead>
+                                <tr class="training_table-item-thead">
+                                  <td scope="col">Расстояние</td>
+                                  <td scope="col">Темп</td>
+                                  <td scope="col">Время</td>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                <tr class="training_table-item-tbody">
+                                    <td>9,94 км</td>
+                                    <td>6:33 /км</td>
+                                    <td>1ч. 5мин</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>      
+                </div>
+                <div class="training_image"> 
+                    <img src="{{ asset('/assets/img/run_default2.jpg')}}" class="rounded img" alt="user-image">
+                </div>   
+            </div>       
+        </div>   
+        {{--!Правая колонка с Соревнованиями--}}
+        <div class="competition_container">
+            <h4 class="competition_header-text">Соревнования</h4>
+            <div class="competition_future">
+                <h6>Предстоящие</h6>
+                <div class="competition_future-items">
+                    <div class="competition_future-item">
+                        <div class="competition_future-item-image">
+                            <img src="{{ asset('/assets/img/run_default3.jpg')}}" class="rounded img" alt="user-image">
+                        </div>
+                        <div class="competition_future-item-description">
+                            <a href="#" class="competition_future-item-name">X-race WIld Trail</a>
+                            <p class="competition_future-item-date">10 октября 2022 г.</p>
+                            <p class="competition_future-item-distance">35 км </p>
+                        </div>
+                    </div>
+                    <div class="competition_future-item">
+                        <div class="competition_future-item-image">
+                            <img src="{{ asset('/assets/img/run_default3.jpg')}}" class="rounded img" alt="user-image">
+                        </div>
+                        <div class="competition_future-item-description">
+                            <a href="#" class="competition_future-item-name">Soshi TRI Olimpic</a>
+                            <p class="competition_future-item-date">10 сентября 2022 г.</p>
+                            <p class="competition_future-item-distance">52 км </p>
+                        </div>
+                    </div>
+                    <div class="competition_future-item">
+                        <div class="competition_future-item-image">
+                            <img src="{{ asset('/assets/img/run_default3.jpg')}}" class="rounded img" alt="user-image">
+                        </div>
+                        <div class="competition_future-item-description">
+                            <a href="#" class="competition_future-item-name">SportMarafonFest</a>
+                            <p class="competition_future-item-date">4 июня 2022 г.</p>
+                            <p class="competition_future-item-distance">66 км </p>
+                        </div>
+                    </div>
+                    <div class="competition_future-item">
+                        <div class="competition_future-item-image">
+                            <img src="{{ asset('/assets/img/run_default3.jpg')}}" class="rounded img" alt="user-image">
+                        </div>
+                        <div class="competition_future-item-description">
+                            <a href="#" class="competition_future-item-name">Ugresha-Trail</a>
+                            <p class="competition_future-item-date">28 августа 2022 г.</p>
+                            <p class="competition_future-item-distance">30 км </p>
+                        </div>
+                    </div>
+                    <div class="competition_future-item">
+                        <div class="competition_future-item-image">
+                            <img src="{{ asset('/assets/img/run_default3.jpg')}}" class="rounded img" alt="user-image">
+                        </div>
+                        <div class="competition_future-item-description">
+                            <a href="#" class="competition_future-item-name">Arkhiz X-run</a>
+                            <p class="competition_future-item-date">3 июля 2022 г.</p>
+                            <p class="competition_future-item-distance">33 км </p>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
             
+            <div class="competition_past">
+                <h6>Прошедшие</h6>
+                <a href="#" class="competition_past-items-viewAll">Показать все</a>
+                <div class="competition_past-items">
+                    <div class="competition_past-item">
+                        <div class="competition_past-item-image">
+                            <img src="{{ asset('/assets/img/run_default3.jpg')}}" class="rounded img" alt="user-image">
+                        </div> 
+                        <div class="competition_past-item-description">
+                            <a href="#" class="competition_past-item-name">Московский полумарафон</a>
+                            <p class="competition_past-item-date">3 июля 2021 г.</p>
+                        </div>
+                    </div>
+                    <div class="competition_past-item">
+                        <div class="competition_past-item-image">
+                            <img src="{{ asset('/assets/img/run_default3.jpg')}}" class="rounded img" alt="user-image">
+                        </div> 
+                        <div class="competition_past-item-description">
+                            <a href="#" class="competition_past-item-name">Arkhiz X-run</a>
+                            <p class="competition_past-item-date">3 июля 2021 г.</p>
+                        </div>
+                    </div>
+                    <div class="competition_past-item">
+                        <div class="competition_past-item-image">
+                            <img src="{{ asset('/assets/img/run_default3.jpg')}}" class="rounded img" alt="user-image">
+                        </div> 
+                        <div class="competition_past-item-description">
+                            <a href="#" class="competition_past-item-name">Arkhiz X-run</a>
+                            <p class="competition_past-item-date">3 июля 2021 г.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{--!Popup Новая тренировка--}}
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Новая тренировка</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3" method="POST" action="/test">
+                        @csrf
+                        <select class="form-select" aria-label="Default select example" name="type" required>
+                            <option selected value="Забег">Забег</option>
+                            <option value="Велозаезд">Велозаезд</option>
+                            <option value="Заплыв">Заплыв</option>
+                          </select>
+                        <div class="row g-3">
+                            <div class="col">
+                                <label for="inputDate" class="form-label">Дата</label>
+                                <input type="date" class="form-control" value='' id="inputDate" name="date" required>
+                            </div>
+                            <div class="col">
+                                <label for="inputTime" class="form-label">Время</label>
+                                <input type="time" class="form-control" value='' id="inputTime" name="time" step="1" required>
+                            </div>
+                            <div class="col">
+                                <label for="inputLocation" class="form-label">Локация</label>
+                                <input type="text" class="form-control" value='' id="inputLocation" name="location" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="inputDistance" class="form-label">Расстояние</label>
+                            <input type="number" class="form-control" id="inputDistance" name="distance" step="any" required>
+                          </div>
+                          <div class="col-12">
+                            <label for="inputPace" class="form-label">Темп</label>
+                            <input type="time" class="form-control" id="inputPace" name="pace" step="1" required>
+                          </div>
+                          <div class="col-12">
+                            <label for="inputDuration" class="form-label">Продолжительность</label>
+                            <input type="time" class="form-control" id="inputDuration" name="duration" step="1" required>
+                          </div>
+                        <button type="submit" class="btn btn-danger newtraining_btn">Сохранить</button>
+                      </form>
+                </div>   
+              </div>
+            </div>
+          </div>
         </div>
         
     </main>
