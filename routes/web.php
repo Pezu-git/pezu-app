@@ -12,17 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::view('/{path?}', 'app');
 
-Route::get('/', function () {
-    return view('sport');
-});
-Route::get('/newtr', function () {
-    return view('newtraining');
-});
-Route::get('/profile', function() {
-    return view('profile');
-});
-Route::post('/test', function () {
-    print_r($_POST);
-});
+
+
+
+
 
