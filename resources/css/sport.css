@@ -1,9 +1,9 @@
-body, main {
+body,
+main {
     background-color: #f7f7fa;
     position: relative;
 }
 header {
-    
     display: flex;
     align-items: center;
     width: 100vw;
@@ -17,31 +17,31 @@ header {
     box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
 }
 .header_container {
-   width: 35vw;
-   min-width: 500px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+    width: 35vw;
+    min-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sport_container {
     width: 80vw;
     margin: auto;
     padding-top: 100px;
-    display: flex;  
+    display: flex;
 }
 a {
     text-decoration: none;
     color: black;
 }
 
-.cards_container, 
+.cards_container,
 .competition_container {
     height: 800px;
     position: sticky;
     top: 0;
 }
-.user_card, 
+.user_card,
 .process_card {
     position: relative;
     width: 300px;
@@ -68,7 +68,7 @@ a {
     transform: translate(-50%, -50%);
 }
 .user_card-info {
-    width: 300px;  
+    width: 300px;
 }
 .user_card-info-item {
     font-weight: bold;
@@ -128,15 +128,15 @@ hr {
 
 .process_card {
     padding-top: 0;
-    margin-top: 30px; 
+    margin-top: 30px;
 }
 .process_card-inset {
-    
     display: flex;
     justify-content: space-between;
     background-color: #f7f7fa;
 }
-.process_card-inset-item, .process_card-inset-item-active {
+.process_card-inset-item,
+.process_card-inset-item-active {
     width: 33%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -149,9 +149,9 @@ hr {
     cursor: pointer;
 }
 .process_card-inset-item-active {
-    background-color: #fff;    
+    background-color: #fff;
 }
-.week_process, 
+.week_process,
 .year_process {
     padding-top: 15px;
     font-size: 12px;
@@ -173,7 +173,7 @@ hr {
     top: 105px;
 }
 .week_process-value,
-.year_process-value  {
+.year_process-value {
     font-size: 30px;
     font-weight: bold;
     color: #79d7bd;
@@ -188,7 +188,7 @@ hr {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-left: 50px;  
+    margin-left: 50px;
 }
 .training_list-item {
     width: 100%;
@@ -233,9 +233,8 @@ hr {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-left: 50px; 
+    margin-left: 50px;
     background-color: #fff;
-    
 
     -webkit-box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
     box-shadow: 0px 8px 24px rgb(13 13 18 / 4%);
@@ -244,7 +243,7 @@ hr {
 .competition_header-text {
     padding-top: 25px;
 }
-.competition_past, 
+.competition_past,
 .competition_future {
     width: 100%;
     display: flex;
@@ -258,7 +257,7 @@ hr {
     font-size: 12px;
     padding-right: 15px;
     padding-bottom: 5px;
-    color: #007FB6;
+    color: #007fb6;
 }
 .competition_past-items,
 .competition_future-items {
@@ -278,7 +277,6 @@ hr {
 }
 .competition_future-item:first-child {
     margin-top: 10px;
-    
 }
 .competition_future-item {
     margin-bottom: 20px;
@@ -306,7 +304,7 @@ hr {
 }
 .competition_past-item-name {
     font-size: 12px;
-    color: #007FB6;
+    color: #007fb6;
     display: block;
     margin-top: 5px;
     line-height: 1.1em;

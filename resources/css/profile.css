@@ -2,19 +2,19 @@
     padding-top: 49px;
     background-color: white;
     width: 100%;
-    height: 800px;
+    height: 100%;
 }
 .profile_user-images {
     display: flex;
     justify-content: center;
-    width: 100%;  
+    width: 100%;
 }
 .profile_user-image {
     width: 20%;
     aspect-ratio: 1/1;
     border: 2px solid white;
 }
-.profile_user-image:nth-child(-n+3) {
+.profile_user-image:nth-child(-n + 3) {
     border-right: none;
 }
 .profile_user-card {
@@ -26,7 +26,6 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    
 }
 .profile_user-avatar-container {
     position: absolute;
@@ -66,7 +65,6 @@
 .last_progress-count {
     font-size: 3.6vw;
     font-weight: bold;
-    
 }
 .last_progress-foottitle {
     color: #6d6d78;
@@ -89,7 +87,7 @@
     opacity: 1;
     width: 2px;
     height: 2px;
-    
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -97,6 +95,24 @@
     border-radius: 100%;
 }
 .week_activity-duration {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(184, 26, 60);
+}
+
+.my_parameters {
+    width: 300px;
+    margin-left: 5vw;
+}
+div .param-card {
+    border: 1px solid rgb(213, 218, 218);
+    border-radius: 10px;
+    background-color: #fff;
+}
+div .param-card:hover {
+    background-color: rgb(160, 161, 161);
+}
+
+div .active-card {
+    background-color: rgb(160, 161, 161);
+    border-radius: 10px;
 }
