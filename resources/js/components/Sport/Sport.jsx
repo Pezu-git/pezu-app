@@ -4,10 +4,10 @@ import Main from "./Main";
 
 
 const Sport = () => (
-    <body>
+    <div>
        <Header />
        <Main />
-    </body>
+    </div>
 );
 
 export default Sport;

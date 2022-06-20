@@ -11,13 +11,13 @@ import React, { Component } from 'react'
       render () {
         return (
           <BrowserRouter>
-            <div>
+            
               <Routes>
                 <Route path="/" element={<Sport />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/test" element={<Test />} />
               </Routes>
-            </div>
+            
           </BrowserRouter>
         )
       }
